@@ -1,27 +1,38 @@
 
 import Foundation
-import CLibgif
+import GifSwift.CLibgif
 
 public class GifFile {
 
     private let path: URL
+    private let fileHandlePtr: UnsafeMutablePointer<GifFileType>
+    private var fileHandle: GifFileType {
+        return self.fileHandlePtr.pointee
+    }
 
-    public init(path: URL) {
+    public init?(path: URL) {
         self.path = path
+
+        let errorCode = UnsafeMutablePointer<Int32>.allocate(capacity: 1)
+        if let handle = path.path.withCString({ DGifOpenFileName($0, errorCode) }) {
+            self.fileHandlePtr = handle
+            DGifSlurp(handle)
+        } else {
+            debugPrint("Error opening file \(errorCode.pointee)")
+            return nil
+        }
     }
 
-    public var dimensionsInfo: String? {
-        let errorCode: UnsafeMutablePointer<Int32> = UnsafeMutablePointer.allocate(capacity: 1)
-        let handlePtr = path.path.withCString { (ptr) in
-            return DGifOpenFileName(ptr, errorCode)
-        }
-
-        if let handle = handlePtr?.pointee {
-            return "Width: \(handle.SWidth) Height: \(handle.SHeight)"
-        }
-
-        return nil
+    deinit {
+        DGifCloseFile(self.fileHandlePtr, nil)
     }
 
+    public var size: CGSize {
+        return CGSize(width: Double(fileHandle.SWidth), height: Double(fileHandle.SHeight))
+    }
+
+    public var imagesCount: Int {
+        return Int(fileHandle.ImageCount)
+    }
 }
 

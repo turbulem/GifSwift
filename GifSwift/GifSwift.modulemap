@@ -1,0 +1,9 @@
+framework module GifSwift {
+    umbrella header "GifSwift.h"
+
+    explicit module CLibgif {
+        private header "gif_lib.h"
+    }
+
+    export *
+}

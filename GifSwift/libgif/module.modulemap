@@ -1,5 +1,0 @@
-module CLibgif {
-    header "gif_lib.h"
-    link "gif"
-    export *
-}

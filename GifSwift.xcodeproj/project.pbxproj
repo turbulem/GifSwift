@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB5ABB1B2199D332003878A1 /* libgif.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC4A02B2175F95000664F3C /* libgif.a */; };
+		BB5ABB1D2199D495003878A1 /* cat.gif in Resources */ = {isa = PBXBuildFile; fileRef = BB5ABB1C2199D486003878A1 /* cat.gif */; };
 		BBC4A00C2175F85900664F3C /* GifSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC4A00A2175F85900664F3C /* GifSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BBC4A0192175F87A00664F3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4A0182175F87A00664F3C /* AppDelegate.swift */; };
 		BBC4A01B2175F87A00664F3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4A01A2175F87A00664F3C /* ViewController.swift */; };
 		BBC4A01E2175F87A00664F3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC4A01C2175F87A00664F3C /* Main.storyboard */; };
 		BBC4A0202175F87B00664F3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBC4A01F2175F87B00664F3C /* Assets.xcassets */; };
 		BBC4A0232175F87B00664F3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBC4A0212175F87B00664F3C /* LaunchScreen.storyboard */; };
-		BBC4A02A2175F94100664F3C /* gif_lib.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC4A0292175F94100664F3C /* gif_lib.h */; };
-		BBC4A02C2175F95000664F3C /* libgif.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC4A02B2175F95000664F3C /* libgif.a */; };
+		BBC4A02A2175F94100664F3C /* gif_lib.h in Headers */ = {isa = PBXBuildFile; fileRef = BBC4A0292175F94100664F3C /* gif_lib.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BBC4A02E2175FB4500664F3C /* GifFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC4A02D2175FB4500664F3C /* GifFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BB6E1A0D2177B4520084438D /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		BB5ABB1C2199D486003878A1 /* cat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cat.gif; sourceTree = "<group>"; };
+		BB6E1A0D2177B4520084438D /* GifSwift.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = GifSwift.modulemap; sourceTree = "<group>"; };
 		BBC4A0072175F85900664F3C /* GifSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GifSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBC4A00A2175F85900664F3C /* GifSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GifSwift.h; sourceTree = "<group>"; };
 		BBC4A00B2175F85900664F3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBC4A02C2175F95000664F3C /* libgif.a in Frameworks */,
+				BB5ABB1B2199D332003878A1 /* libgif.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +56,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB5ABB1A2199D332003878A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BBC49FFD2175F85800664F3C = {
 			isa = PBXGroup;
 			children = (
 				BBC4A0092175F85900664F3C /* GifSwift */,
 				BBC4A0172175F87A00664F3C /* GifTestApp */,
 				BBC4A0082175F85900664F3C /* Products */,
+				BB5ABB1A2199D332003878A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +85,7 @@
 		BBC4A0092175F85900664F3C /* GifSwift */ = {
 			isa = PBXGroup;
 			children = (
+				BB6E1A0D2177B4520084438D /* GifSwift.modulemap */,
 				BBC4A0282175F92D00664F3C /* libgif */,
 				BBC4A00A2175F85900664F3C /* GifSwift.h */,
 				BBC4A00B2175F85900664F3C /* Info.plist */,
@@ -86,6 +97,7 @@
 		BBC4A0172175F87A00664F3C /* GifTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				BB5ABB1C2199D486003878A1 /* cat.gif */,
 				BBC4A0182175F87A00664F3C /* AppDelegate.swift */,
 				BBC4A01A2175F87A00664F3C /* ViewController.swift */,
 				BBC4A01C2175F87A00664F3C /* Main.storyboard */,
@@ -99,7 +111,6 @@
 		BBC4A0282175F92D00664F3C /* libgif */ = {
 			isa = PBXGroup;
 			children = (
-				BB6E1A0D2177B4520084438D /* module.modulemap */,
 				BBC4A02B2175F95000664F3C /* libgif.a */,
 				BBC4A0292175F94100664F3C /* gif_lib.h */,
 			);
@@ -209,6 +220,7 @@
 				BBC4A0232175F87B00664F3C /* LaunchScreen.storyboard in Resources */,
 				BBC4A0202175F87B00664F3C /* Assets.xcassets in Resources */,
 				BBC4A01E2175F87A00664F3C /* Main.storyboard in Resources */,
+				BB5ABB1D2199D495003878A1 /* cat.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +409,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GifSwift/libgif",
 				);
+				MODULEMAP_FILE = $SRCROOT/GifSwift/GifSwift.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = lem.GifSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -427,6 +440,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GifSwift/libgif",
 				);
+				MODULEMAP_FILE = $SRCROOT/GifSwift/GifSwift.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = lem.GifSwift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
