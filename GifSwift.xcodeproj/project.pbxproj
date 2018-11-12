@@ -137,8 +137,8 @@
 			buildConfigurationList = BBC4A00F2175F85900664F3C /* Build configuration list for PBXNativeTarget "GifSwift" */;
 			buildPhases = (
 				BBC4A0022175F85900664F3C /* Headers */,
-				BBC4A0032175F85900664F3C /* Sources */,
 				BBC4A0042175F85900664F3C /* Frameworks */,
+				BBC4A0032175F85900664F3C /* Sources */,
 				BBC4A0052175F85900664F3C /* Resources */,
 			);
 			buildRules = (

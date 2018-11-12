@@ -10,6 +10,12 @@ public class GifFile {
         return self.fileHandlePtr.pointee
     }
 
+    deinit {
+        DGifCloseFile(self.fileHandlePtr, nil)
+    }
+
+    // MARK: - API
+
     public init?(path: URL) {
         self.path = path
 
@@ -21,10 +27,6 @@ public class GifFile {
             debugPrint("Error opening file \(errorCode.pointee)")
             return nil
         }
-    }
-
-    deinit {
-        DGifCloseFile(self.fileHandlePtr, nil)
     }
 
     public var size: CGSize {
