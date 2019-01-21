@@ -4,7 +4,7 @@ import GifSwift.CLibgif
 
 public class GifFile {
 
-    private let path: URL
+    private let path: String
     private let fileHandlePtr: UnsafeMutablePointer<GifFileType>
     private var fileHandle: GifFileType {
         return self.fileHandlePtr.pointee
@@ -16,11 +16,11 @@ public class GifFile {
 
     // MARK: - API
 
-    public init?(path: URL) {
+    public init?(path: String) {
         self.path = path
 
         let errorCode = UnsafeMutablePointer<Int32>.allocate(capacity: 1)
-        if let handle = path.path.withCString({ DGifOpenFileName($0, errorCode) }) {
+        if let handle = path.withCString({ DGifOpenFileName($0, errorCode) }) {
             self.fileHandlePtr = handle
             DGifSlurp(handle)
         } else {
